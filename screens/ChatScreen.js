@@ -17,6 +17,7 @@ import { Header } from "@react-navigation/stack";
 import { AntDesign, FontAwesome, Ionicons } from "@expo/vector-icons";
 import firebase from "firebase";
 import { auth, db } from "../firebase";
+import { StatusBar } from "expo-status-bar";
 
 const ChatScreen = ({ navigation, route }) => {
   const [input, setInput] = useState("");
@@ -103,11 +104,19 @@ const ChatScreen = ({ navigation, route }) => {
     return unsubscribe;
   }, [route]);
 
+  useLayoutEffect(() => {
+    const keyboardAppears = Keyboard.addListener("keyboardDidShow", () => {
+      scrollViewRef.current.scrollToEnd({ animated: true });
+    });
+    return () => {
+      keyboardAppears.remove();
+    };
+  }, []);
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
+      <StatusBar style="light" />
       <KeyboardAvoidingView
-        // behavior={Platform.OS === "android" ? "height" : "padding"}
-
         style={styles.container}
 
         // style={{ flex: 1 }}
@@ -119,6 +128,7 @@ const ChatScreen = ({ navigation, route }) => {
               scrollViewRef.current.scrollToEnd({ animated: true })
             }
             contentContainerStyle={{ paddingTop: 15 }}
+            style={{}}
           >
             {/*chat is displayed here*/}
             {messages.map(({ id, data }) =>
@@ -191,8 +201,6 @@ export default ChatScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
   },
   footer: {
     position: "relative",
