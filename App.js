@@ -1,5 +1,5 @@
 import "react-native-gesture-handler";
-import React from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import { StyleSheet, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -8,6 +8,7 @@ import RegisterScreen from "./screens/RegisterScreen";
 import HomeScreen from "./screens/HomeScreen";
 import AddChatScreen from "./screens/AddChatScreen";
 import ChatScreen from "./screens/ChatScreen";
+import { auth } from "./firebase";
 
 const Stack = createStackNavigator();
 const globalSreenOptions = {
@@ -22,10 +23,20 @@ const globalSreenOptions = {
 };
 
 function App() {
+  // useLayoutEffect(() => {
+
+  // }, []);
+  const initialScreen = () => {
+    const initScreen = auth ? "Home" : "Login";
+    return initScreen;
+  };
+
+  const initScreen = initialScreen();
+
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Home"
+        initialRouteName={initScreen}
         screenOptions={globalSreenOptions}
       >
         <Stack.Screen name="Login" component={LoginScreen} />

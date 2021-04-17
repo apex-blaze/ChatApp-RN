@@ -43,7 +43,9 @@ const ChatScreen = ({ navigation, route }) => {
                 "https://st1.bollywoodlife.com/wp-content/uploads/2020/09/FotoJet382.jpg",
             }}
           />
-          <Text>{route.params.chatName}</Text>
+          <Text style={{ marginLeft: 11, color: "white" }}>
+            {route.params.chatName}
+          </Text>
         </View>
       ),
       headerLeft: () => (

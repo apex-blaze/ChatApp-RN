@@ -55,6 +55,7 @@ const LoginScreen = ({ navigation }) => {
           title="Sign in"
           containerStyle={styles.button}
           onPress={signIn}
+          // disabled={!email || !password}
         />
         <Text
           style={{ color: "green", paddingBottom: 5, fontWeight: "bold" }}
