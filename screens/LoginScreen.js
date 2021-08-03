@@ -8,10 +8,10 @@ import {
   KeyboardAvoidingView,
   Keyboard,
 } from "react-native";
-import Icon from "react-native-vector-icons/FontAwesome";
+
 import { Button, Input, Image } from "react-native-elements";
 import { auth } from "../firebase";
-
+import { AntDesign, FontAwesome, Ionicons } from "@expo/vector-icons";
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -58,7 +58,7 @@ const LoginScreen = ({ navigation }) => {
           // disabled={!email || !password}
         />
         <Text
-          style={{ color: "green", paddingBottom: 5, fontWeight: "bold" }}
+          style={{ color: "#A03C78", paddingBottom: 5, fontWeight: "bold" }}
           onPress={() => Linking.openURL("http://google.com")}
         >
           Forgot Password?
@@ -69,30 +69,36 @@ const LoginScreen = ({ navigation }) => {
             justifyContent: "space-evenly",
             width: "100%",
             padding: 10,
-            margin: 10,
+            // margin: 10,
           }}
         >
           <View style={{ alignItems: "center" }}>
-            <Image
+            {/* <Image
               source={require("../assets/images/facebookLogo.jpg")}
-              style={{ height: 50, width: 50 }}
-            ></Image>
+              style={{ height: 40, width: 40 }}
+            ></Image> */}
+            <FontAwesome
+              name="facebook-f"
+              size={24}
+              color="#3b5998"
+              style={{ width: 50, height: 40 }}
+            />
             <Text style={{ color: "#3e3ef0", fontWeight: "bold" }}>
-              Login with facebook
+              {/* Login with facebook */}
             </Text>
           </View>
           <View style={{ alignItems: "center" }}>
             <Image
               source={require("../assets/images/googleLogo.png")}
-              style={{ height: 50, width: 50 }}
+              style={{ height: 30, width: 40 }}
             ></Image>
             <Text style={{ color: "#c40c0f", fontWeight: "bold" }}>
-              Login with google
+              {/* Login with google */}
             </Text>
           </View>
         </View>
       </View>
-      <Text style={{ color: "green", fontWeight: "bold" }}>
+      <Text style={{ color: "#A03C78", fontWeight: "bold", marginTop: "1%" }}>
         Don't have an account?
       </Text>
       <Button
@@ -118,12 +124,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     overflow: "hidden",
     alignItems: "center",
+    // height: "75%",
   },
   cardHeader: {
     margin: 3,
     fontSize: 29,
     fontWeight: "bold",
-    color: "#9112c7",
+    color: "#b34180",
   },
   button: {
     width: 80,

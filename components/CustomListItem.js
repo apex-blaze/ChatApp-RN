@@ -23,8 +23,7 @@ const CustomListItem = ({ id, chatName, enterChat }) => {
       <Avatar
         rounded
         source={{
-          uri:
-            "https://st1.bollywoodlife.com/wp-content/uploads/2020/09/FotoJet382.jpg",
+          uri: "https://st2.depositphotos.com/1010751/8043/v/950/depositphotos_80435216-stock-illustration-people-man-logo-group-of.jpg",
         }}
       />
       <ListItem.Content>

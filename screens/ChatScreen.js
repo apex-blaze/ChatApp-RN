@@ -39,8 +39,7 @@ const ChatScreen = ({ navigation, route }) => {
           <Avatar
             rounded
             source={{
-              uri:
-                "https://st1.bollywoodlife.com/wp-content/uploads/2020/09/FotoJet382.jpg",
+              uri: "https://st2.depositphotos.com/1010751/8043/v/950/depositphotos_80435216-stock-illustration-people-man-logo-group-of.jpg",
             }}
           />
           <Text style={{ marginLeft: 11, color: "white" }}>
@@ -248,7 +247,7 @@ const styles = StyleSheet.create({
     left: 10,
     paddingRight: 10,
     fontSize: 10,
-    color: "white",
+    color: "black",
   },
   receiverText: {
     color: "black",
@@ -257,7 +256,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   senderText: {
-    color: "black",
+    color: "white",
     fontWeight: "500",
     marginLeft: 10,
     marginBottom: 5,
